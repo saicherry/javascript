@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>objects</title>
+  </head>
+  <body>
+    <table id="demo1" border="1"></table>
+    <script>
+      // object
+
+      var student = {
+        name: ["tharunkumar", "gopi", "srinivas", "yadav"],
+        rollno: ["20HT1A0523", "20HT1A0524", "20HT1A0525", "20HT1A0526"],
+        branch: ["cse", "cse", "cse", "cse"],
+        college: ["chalapathi", "chalapathi", "chalapathi", "chalapathi"],
+      };
+
+      for (let i = 0; i < 4; i++) {
+        document.write(student.name[i] + " " + student.rollno[i] + " " + student.branch[i] + " " + student.college[i] + "<br>");
+      }
+
+
+      // object constructor
+
+      function student1(name, rollno, branch, college) {
+        this.name = name;
+        this.rollno = rollno;
+        this.branch = branch;
+        this.college = college;
+      }
+
+      var s1 = new student1("tharunkumar", "20HT1A0523", "CSE", "CHALAPATHI");
+      document.getElementById("demo1").innerHTML = s1.name + " " + s1.rollno + " " + s1.branch + " " + s1.college;
+    </script>
+  </body>
+</html>
