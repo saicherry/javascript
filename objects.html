@@ -2,38 +2,219 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>objects</title>
   </head>
   <body>
-    <table id="demo1" border="1"></table>
+    <table border="1">
+      <tr>
+        <th>name</th>
+        <th>rollno</th>
+        <th>branch</th>
+        <th>college</th>
+        <th>phone</th>
+      </tr>
+      <tr>
+        <td id="demo0"></td>
+        <td id="demo1"></td>
+        <td id="demo2"></td>
+        <td id="demo3"></td>
+        <td id="demo4"></td>
+      </tr>
+      <tr>
+        <td id="demo5"></td>
+        <td id="demo6"></td>
+        <td id="demo7"></td>
+        <td id="demo8"></td>
+        <td id="demo9"></td>
+      </tr>
+      <tr>
+        <td id="demo10"></td>
+        <td id="demo11"></td>
+        <td id="demo12"></td>
+        <td id="demo13"></td>
+        <td id="demo14"></td>
+      </tr>
+      <tr>
+        <td id="demo15"></td>
+        <td id="demo16"></td>
+        <td id="demo17"></td>
+        <td id="demo18"></td>
+        <td id="demo19"></td>
+      </tr>
+      <tr>
+        <td id="demo20"></td>
+        <td id="demo21"></td>
+        <td id="demo22"></td>
+        <td id="demo23"></td>
+        <td id="demo24"></td>
+      </tr>
+      <tr>
+        <td id="demo25"></td>
+        <td id="demo26"></td>
+        <td id="demo27"></td>
+        <td id="demo28"></td>
+        <td id="demo29"></td>
+      </tr>
+      <tr>
+        <td id="demo30"></td>
+        <td id="demo31"></td>
+        <td id="demo32"></td>
+        <td id="demo33"></td>
+        <td id="demo34"></td>
+      </tr>
+      <tr>
+        <td id="demo35"></td>
+        <td id="demo36"></td>
+        <td id="demo37"></td>
+        <td id="demo38"></td>
+        <td id="demo39"></td>
+      </tr>
+    </table>
     <script>
       // object
 
-      var student = {
-        name: ["tharunkumar", "gopi", "srinivas", "yadav"],
-        rollno: ["20HT1A0523", "20HT1A0524", "20HT1A0525", "20HT1A0526"],
-        branch: ["cse", "cse", "cse", "cse"],
-        college: ["chalapathi", "chalapathi", "chalapathi", "chalapathi"],
+      var student1 = {
+        name:"tharunkumar",
+        rollno:523,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
+      
+      var student2 = {
+        name:"sampath",
+        rollno:524,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
       };
 
-      for (let i = 0; i < 4; i++) {
-        document.write(student.name[i] + " " + student.rollno[i] + " " + student.branch[i] + " " + student.college[i] + "<br>");
-      }
+      var student3 = {
+        name:"mohith",
+        rollno:560,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
 
+      var student4 = {
+        name:"srinivas",
+        rollno:549,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
 
-      // object constructor
+      var student5 = {
+        name:"jagadeesh",
+        rollno:534,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
 
-      function student1(name, rollno, branch, college) {
-        this.name = name;
-        this.rollno = rollno;
-        this.branch = branch;
-        this.college = college;
-      }
+      var student6 = {
+        name:"vamsi",
+        rollno:546,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
 
-      var s1 = new student1("tharunkumar", "20HT1A0523", "CSE", "CHALAPATHI");
-      document.getElementById("demo1").innerHTML = s1.name + " " + s1.rollno + " " + s1.branch + " " + s1.college;
+      var student7 = {
+        name:"chinna",
+        rollno:502,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
+
+      var student8 = {
+        name:"harikrishna",
+        rollno: 509,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
+      
+      var student9 = {
+        name:"anilkumar",
+        rollno:520,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
+      
+      var student10 = {
+        name:"vignesh",
+        rollno:519,
+        branch:"cse",
+        college:"chalapathi",
+        phone:9987654311
+      };
+
+      var object = [student1,student2,student3,student4,student5,student6,student7,student8,student9,student10];
+       
+      document.getElementById("demo0").innerHTML = object[0].name;
+      document.getElementById("demo1").innerHTML = object[0].rollno;
+      document.getElementById("demo2").innerHTML = object[0].branch;
+      document.getElementById("demo3").innerHTML = object[0].college;
+      document.getElementById("demo4").innerHTML = object[0].phone;
+
+      document.getElementById("demo5").innerHTML = object[1].name;
+      document.getElementById("demo6").innerHTML = object[1].rollno;
+      document.getElementById("demo7").innerHTML = object[1].branch;
+      document.getElementById("demo8").innerHTML = object[1].college;
+      document.getElementById("demo9").innerHTML = object[1].phone;
+
+      document.getElementById("demo10").innerHTML = object[2].name;
+      document.getElementById("demo11").innerHTML = object[2].rollno;
+      document.getElementById("demo12").innerHTML = object[2].branch;
+      document.getElementById("demo13").innerHTML = object[2].college;
+      document.getElementById("demo14").innerHTML = object[2].phone;
+
+      document.getElementById("demo15").innerHTML = object[3].name;
+      document.getElementById("demo16").innerHTML = object[3].rollno;
+      document.getElementById("demo17").innerHTML = object[3].branch;
+      document.getElementById("demo18").innerHTML = object[3].college;
+      document.getElementById("demo19").innerHTML = object[3].phone;
+
+      document.getElementById("demo20").innerHTML = object[4].name;
+      document.getElementById("demo21").innerHTML = object[4].rollno;
+      document.getElementById("demo22").innerHTML = object[4].branch;
+      document.getElementById("demo23").innerHTML = object[4].college;
+      document.getElementById("demo24").innerHTML = object[4].phone;
+
+      document.getElementById("demo25").innerHTML = object[5].name;
+      document.getElementById("demo26").innerHTML = object[5].rollno;
+      document.getElementById("demo27").innerHTML = object[5].branch;
+      document.getElementById("demo28").innerHTML = object[5].college;
+      document.getElementById("demo29").innerHTML = object[5].phone;
+
+      document.getElementById("demo30").innerHTML = object[6].name;
+      document.getElementById("demo31").innerHTML = object[6].rollno;
+      document.getElementById("demo32").innerHTML = object[6].branch;
+      document.getElementById("demo33").innerHTML = object[6].college;
+      document.getElementById("demo34").innerHTML = object[6].phone;
+
+      document.getElementById("demo35").innerHTML = object[7].name;
+      document.getElementById("demo36").innerHTML = object[7].rollno;
+      document.getElementById("demo37").innerHTML = object[7].branch;
+      document.getElementById("demo38").innerHTML = object[7].college;
+      document.getElementById("demo39").innerHTML = object[7].phone;
+      
+      // for(let i=0;i<object.length;i++){
+
+      //    for(let j=0;j<4;j++){
+
+      //        document.getElementById("demo").innerHTML = object[j].name;
+
+      //    }
+
+      // }
+
     </script>
   </body>
 </html>
