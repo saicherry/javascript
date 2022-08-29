@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var array = [];
+        function load(){
+            let name = document.getElementById("name").value;
+            let rollno = document.getElementById("rollno").value;
+            let branch = document.getElementById("branch").value;
+            let college = document.getElementById("college").value;     
+            var student = {
+                  
+                    name : name,
+                    rollno : rollno,
+                    branch : branch,
+                    college : college
+             
+                };
+           array.push(student);
+           console.log(array);
+        }
+            
+       function reset(){
+          document.getElementById("name").value = ' ';
+          document.getElementById("rollno").value = ' ';
+          document.getElementById("branch").value = ' ';
+          document.getElementById("college").value = ' ';
+       }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="">name</label>
+        <input type="text" name="name" id="name">
+        <label for="">rollno</label>
+        <input type="text" name="rollno" id="rollno">
+        <label for="">branch</label>
+        <input type="text" name="class" id="branch">
+        <label for="">college</label>
+        <input type="text" name="college" id="college">
+        <input type="button" value="submit"  onclick="load()">
+        <input type="button" value="reset"  onclick="reset()">
+    </form>
+</body>
+</html>
