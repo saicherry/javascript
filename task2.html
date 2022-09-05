@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task2</title>
+    <script>
+      var stdArray = [];
+
+      function captureStudentDetails() {
+        let stdFirstName = document.getElementById("firstName").value;
+        let stdMiddleName = document.getElementById("middleName").value;
+        let stdLastName = document.getElementById("lastName").value;
+        let stdName = stdFirstName.concat(" ", stdMiddleName, " ", stdLastName);
+        let stdrollno = document.getElementById("rollno").value;
+        let stdBranch = document.getElementById("branch").value;
+        let stdCollege = document.getElementById("college").value;
+
+        let student = {
+          name: stdName || "No Name",
+          rollno: stdrollno || "99999",
+          branch: stdBranch || "CIVIL",
+          college: stdCollege || "Chalapati",
+        };
+
+        return student;
+      }
+
+      function captureAddressDetails() {
+        let stdStreatName = document.getElementById("streatName").value;
+        let stdHouseNo = document.getElementById("houseNo").value;
+        let stdDistrict = document.getElementById("district").value;
+        let stdState = document.getElementById("state").value;
+        let stdAdress = document.getElementById("addressType").value;
+
+        let addressObj = {
+          streat: stdStreatName,
+          houseno: stdHouseNo,
+          district: stdDistrict || "Guntur",
+          state: stdState,
+          addresstype: stdAdress,
+        };
+
+        return addressObj;
+      }
+
+      function onSubmit() {
+        let stdObj = captureStudentDetails();
+        let address = captureAddressDetails();
+
+        stdObj.addresses = [];
+        stdObj.addresses.push(address);
+
+        stdArray.push(stdObj);
+
+        console.log("onSubmit() stdArray : " + stdArray);
+        console.log(stdArray);
+      }
+      
+      function reset() {
+        document.getElementById("firstName").value = "";
+        document.getElementById("middleName").value = "";
+        document.getElementById("lastName").value = "";
+        document.getElementById("rollno").value = "";
+        document.getElementById("branch").value = "";
+        document.getElementById("college").value = "";
+        document.getElementById("streatName").value = "";
+        document.getElementById("houseNo").value = "";
+        document.getElementById("district").value = "";
+        document.getElementById("state").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>student form</h1>
+      <div class="form">
+        <form action="">
+          <div class="section1">
+            <table>
+              <tr>
+                <td><label>First name</label></td>
+                <td><input type="text" name="stdName" id="firstName" /></td>
+              </tr>
+              <tr>
+                <td><label>Middle name</label></td>
+                <td><input type="text" name="stdName" id="middleName" /></td>
+              </tr>
+              <tr>
+                <td><label>Last name</label></td>
+                <td><input type="text" name="stdName" id="lastName" /></td>
+              </tr>
+              <tr>
+                <td><label for="">rollno</label></td>
+                <td><input type="text" name="rollno" id="rollno" /></td>
+              </tr>
+              <tr>
+                <td><label for="">branch</label></td>
+                <td><input type="text" name="class" id="branch" /></td>
+              </tr>
+              <tr>
+                <td><label for="">college</label></td>
+                <td><input type="text" name="college" id="college" /></td>
+              </tr>
+            </table>
+          </div>
+          <div class="section2">
+            <h1>addresses</h1>
+            <table>
+              <tr>
+                <td>adresstype</td>
+                <td>
+                  <select id="addressType">
+                    <option>Permenent</option>
+                    <option>current</option>
+                    <option>gardian</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="">streat name</label></td>
+                <td><input type="text" name="class" id="streatName" /></td>
+              </tr>
+              <tr>
+                <td><label for="">house no</label></td>
+                <td><input type="text" name="class" id="houseNo" /></td>
+              </tr>
+              <tr>
+                <td><label for="">district</label></td>
+                <td><input type="text" name="class" id="district" /></td>
+              </tr>
+              <tr>
+                <td><label for="">state</label></td>
+                <td><input type="text" name="class" id="state" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="button" value="submit" onclick="onSubmit()" />
+                </td>
+                <td><input type="button" value="reset" onclick="reset()" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="button"
+                    value="Current Address"
+                    onclick="fnAddCurrentAddress()"
+                  />
+                </td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

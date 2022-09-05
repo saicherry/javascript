@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file</title>
+    <script src="FileSaver.js"></script>
+    <script>
+        function onSubmit() {
+            var blob = new Blob(["Welcome to Websparrow.org."],
+                { type: "text/plain;charset=utf-8" });
+            saveAs(blob, "details.txt");
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+  
+    <table border="1">
+      <tr>
+        <td><label for="">name</label></td><td><input type="text" name="name" id="name" /></td>
+      </tr>
+      <tr>
+        <td><label for="">rollno</label></td><td><input type="text" name="rollno" id="rollno" /></td>
+      </tr>
+      <tr>
+        <td><label for="">branch</label></td><td><input type="text" name="class" id="branch" /></td>
+      </tr>
+      <tr>
+        <td><label for="">college</label></td><td><input type="text" name="college" id="college" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="submit" onclick="onSubmit()" /></td><td><input type="button" value="reset" onclick="reset()" /></td>
+      </tr>
+    </table>
+</form>
+</body>
+</html>
