@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            padding: 60px;
+        }
+    </style>
+    <script>
+        var stdNameArray = [];
+        var templist = " ";
+         
+        function load(){            
+            let varname = document.getElementById("name").value;    
+            stdNameArray.push(varname);      
+            // var item = array.toString();
+            // document.getElementById("display").innerHTML = item + "<br>";  
+            
+             reset();
+
+            var listdiv = document.getElementById("list");
+            listdiv.innerHTML = buildlist();
+
+        }
+        // console.log(array);
+
+
+        function reset(){
+            document.getElementById("name").value = ' ';
+        }
+
+        function buildAlist(value,index,listarray){
+            
+            var stdName = value;
+
+            var stdlist = `
+            
+            <li>${stdName}</li>
+            
+            `;
+
+            templist += stdlist;
+        }
+
+         function buildlist(){
+            
+            templist = ''
+
+            stdNameArray.forEach(buildAlist)
+
+            var htmlCode = `
+              <ul>
+                ${templist}
+              </ul>
+            `;
+
+          return htmlCode;
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" name="name" id="name">
+            <input type="button" value="submit" onclick="load()">
+            <input type="button" value="reset" onclick="reset()">
+        </form>
+    </div>
+    <div class="list" id="list"></div>
+</body>
+</html>
