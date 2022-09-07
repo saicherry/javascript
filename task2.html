@@ -7,12 +7,12 @@
     <title>task2</title>
     <script>
       var stdArray = [];
-
+      var mode = "";
       function captureStudentDetails() {
         let stdFirstName = document.getElementById("firstName").value;
         let stdMiddleName = document.getElementById("middleName").value;
         let stdLastName = document.getElementById("lastName").value;
-        let stdName = stdFirstName.concat(" ", stdMiddleName, " ", stdLastName);
+        let stdName = stdFirstName.concat(stdMiddleName, stdLastName);
         let stdrollno = document.getElementById("rollno").value;
         let stdBranch = document.getElementById("branch").value;
         let stdCollege = document.getElementById("college").value;
@@ -51,13 +51,40 @@
 
         stdObj.addresses = [];
         stdObj.addresses.push(address);
-
         stdArray.push(stdObj);
 
         console.log("onSubmit() stdArray : " + stdArray);
         console.log(stdArray);
+        // console.log(stdArray[0].addresses[0].streat);
       }
-      
+
+      function createForm() {
+        let menu = document.querySelector(".section2");
+        let clonedform = menu.cloneNode(true);
+        clonedform.id = "form";
+        document.body.appendChild(clonedform);
+      }
+
+      // function onSubmit(){
+
+      //   if(mode == "add"){
+      //     fnAddCurrentAddress();
+      //     mode = "";
+      //   }
+      //   else{
+      //    studentSubmit();
+      //   }
+      // }
+
+      // function addCaptureAddressDetails(){
+      //   captureAddressDetails();
+      // }
+
+      function fnAddCurrentAddress() {
+        createForm();
+        mode == "add";
+      }
+
       function reset() {
         document.getElementById("firstName").value = "";
         document.getElementById("middleName").value = "";
@@ -146,6 +173,16 @@
                     type="button"
                     value="Current Address"
                     onclick="fnAddCurrentAddress()"
+                  />
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="button"
+                    value="gardian Address"
+                    onclick="fnAddGardianAddress()"
                   />
                 </td>
                 <td></td>

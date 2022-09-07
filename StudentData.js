@@ -1,4 +1,4 @@
-var students = [
+var studentDetails = [
     {
         name: "Tharun"
     }, {
@@ -8,4 +8,4 @@ var students = [
     }
 ];
 
-export default students;
+export default studentDetails;

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var studentArray = [];
+        function feild(){
+            let name = document.getElementById("name").value;
+            let course = document.getElementById("course").value;
+            let branch = document.getElementById("branch").value;
+            let state = document.getElementById("state").value;
+            let district = document.getElementById("district").value;
+
+            let student = {
+                stdName : name,
+                stdCourse : course,
+                stdBranch : branch,
+                stdState : state,
+                stddistrict : district
+            };
+
+            return student;
+
+        }
+        function address(){
+            let streat = document.getElementById("marks").value;
+            let line = document.getElementById("memo").value;
+            let addressType = document.getElementById("addressType").value;
+            let stdAddress = {
+                stdStreat : streat,
+                stdLine : line,
+                stdAddressType : addressType
+            };
+
+            return stdAddress;
+        }
+        function address1(){
+            let streat = document.getElementById("marks1").value;
+            let line = document.getElementById("memo1").value;
+            let addressType = document.getElementById("addressType1").value;
+            let stdAddress1 = {
+                stdStreat : streat,
+                stdLine : line,
+                stdAddressType : addressType
+            };
+
+            return stdAddress1;
+        }
+        function onSubmit(){
+            let student = feild();
+            let stdAddress = address();
+            let stdAddress1 = address1();
+            student.address = [];
+            student.address.push(stdAddress,stdAddress1);
+            studentArray.push(student);
+            console.log(studentArray);
+        }
+        
+        function reset(){
+            document.getElementById("name").value="";
+            document.getElementById("course").value="";
+            document.getElementById("branch").value="";
+            document.getElementById("state").value="";
+            document.getElementById("district").value="";
+        }
+
+    </script>
+
+    <form action="" >
+        <input type="text" name="" id="name">
+        <input type="text" name="" id="course">
+        <input type="text" name="" id="branch">
+        <input type="text" name="" id="state">
+        <input type="text" name="" id="district">
+        <!-- <select class="select-group" id="addressType" onchange="disableOption(this)">
+                    <option value="0">Permenent</option>
+                    <option value="1">current</option>
+                    <option value="2">gardian</option>
+        </select> -->
+        <select class="select-group" id="addressType">
+        <option value="">Select...</option> 
+        <option value="Permenent">Permenent</option> 
+        <option value="current">current</option>
+        <option value="gardian">gardian</option>
+        </select>
+        <input type="text" name="" id="marks">
+        <input type="text" name="" id="memo">
+        <!-- <select id="addressType1" class="select-group">
+                    <option id="Permenent">Permenent</option>
+                    <option id="current">current</option>
+                    <option id="gardian">gardian</option>
+        </select> -->
+        <select class="select-group" id="addressType1">
+        <option value="">Select...</option> 
+        <option value="Permenent">Permenent</option> 
+        <option value="current">current</option>
+        <option value="gardian">gardian</option>
+        </select>
+        <input type="text" name="" id="marks1">
+        <input type="text" name="" id="memo1">
+        <input type="button" value="submit" onclick="onSubmit()">
+        <input type="button" value="reset" onclick="reset()">
+    </form>
+    <script>
+
+                    const selects = document.querySelectorAll('.select-group');
+                    selects.forEach((elem) => {
+                    elem.addEventListener('change', (event) => {
+                        const values = Array.from(selects).map((select) => select.value);
+                        for (const select of selects) {
+                        select.querySelectorAll('option').forEach((option) => {
+                            const value = option.value;
+                            if (value &&  value !== select.value && values.includes(value)) {
+                            option.disabled = true;
+                            } else {
+                            option.disabled = false;
+                            }
+                        });
+                        }
+                    });
+                    });
+    </script>
+</body>
+</html>
